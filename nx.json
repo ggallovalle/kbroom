@@ -24,6 +24,9 @@
   "projects": {
     "fp-tk": {
       "tags": ["aggregator"]
+    },
+    "magical-types": {
+      "tags": ["types"]
     }
   },
   "workspaceLayout": {

@@ -39,6 +39,45 @@
           }
         }
       }
+    },
+    "magical-types": {
+      "root": "packages/magical-types",
+      "sourceRoot": "packages/magical-types/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/magical-types/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/magical-types"],
+          "options": {
+            "jestConfig": "packages/magical-types/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/magical-types",
+            "tsConfig": "packages/magical-types/tsconfig.lib.json",
+            "packageJson": "packages/magical-types/package.json",
+            "main": "packages/magical-types/src/index.ts",
+            "assets": ["packages/magical-types/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "./dist/packages/magical-types",
+            "command": "yarn publish --access public"
+          }
+        }
+      }
     }
   },
   "cli": {
