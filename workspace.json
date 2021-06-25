@@ -30,6 +30,13 @@
             "main": "packages/fp-tk/src/index.ts",
             "assets": ["packages/fp-tk/*.md"]
           }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "./dist/packages/fp-tk",
+            "command": "yarn publish --access public"
+          }
         }
       }
     }
