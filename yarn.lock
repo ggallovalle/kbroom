@@ -2851,6 +2851,11 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+fp-tk@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fp-tk/-/fp-tk-2.0.0.tgz#896ab789ad163f0dd6e0e3efac59a2c48e33d4af"
+  integrity sha512-XZbvaEKE/Path6ePGIuGBxoZIGbvbQbFgoh/Oaq+Rfysg+AAQN3+3KY0G7sUD0nYKrC8FGf9QakaGto30wxtMw==
+
 fp-ts-rxjs@0.6.15:
   version "0.6.15"
   resolved "https://registry.yarnpkg.com/fp-ts-rxjs/-/fp-ts-rxjs-0.6.15.tgz#4c53ecaf5e18a82c94e4a43a4cf8148978ef9e6c"

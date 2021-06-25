@@ -1,8 +1,9 @@
 {
   "name": "@kbroom/io-cron",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "peerDependencies": {
-    "cron-parser": "3.5.0"
+    "cron-parser": "3.5.0",
+    "fp-tk": "2.0.0"
   }
 }

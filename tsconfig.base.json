@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@kbroom/io-cron": ["packages/io-cron/src/index.ts"],
-      "@kbroom/magical-types": ["packages/magical-types/src/index.ts"],
-      "fp-tk": ["packages/fp-tk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
