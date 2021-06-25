@@ -1,49 +1,49 @@
-import { iso, prism, Newtype } from 'newtype-ts';
-import { Char, isChar, prismChar } from 'newtype-ts/lib/Char';
-import { Integer, isInteger, prismInteger } from 'newtype-ts/lib/Integer';
-import { Negative, isNegative, prismNegative } from 'newtype-ts/lib/Negative';
+import { iso, prism, Newtype } from "newtype-ts";
+import { Char, isChar, prismChar } from "newtype-ts/lib/Char";
+import { Integer, isInteger, prismInteger } from "newtype-ts/lib/Integer";
+import { Negative, isNegative, prismNegative } from "newtype-ts/lib/Negative";
 import {
   NegativeInteger,
   isNegativeInteger,
   prismNegativeInteger,
-} from 'newtype-ts/lib/NegativeInteger';
+} from "newtype-ts/lib/NegativeInteger";
 import {
   NonEmptyString,
   isNonEmptyString,
   prismNonEmptyString,
-} from 'newtype-ts/lib/NonEmptyString';
+} from "newtype-ts/lib/NonEmptyString";
 import {
   NonNegative,
   isNonNegative,
   prismNonNegative,
-} from 'newtype-ts/lib/NonNegative';
+} from "newtype-ts/lib/NonNegative";
 import {
   NonNegativeInteger,
   isNonNegativeInteger,
   prismNonNegativeInteger,
-} from 'newtype-ts/lib/NonNegativeInteger';
+} from "newtype-ts/lib/NonNegativeInteger";
 import {
   NonPositive,
   isNonPositive,
   prismNonPositive,
-} from 'newtype-ts/lib/NonPositive';
+} from "newtype-ts/lib/NonPositive";
 import {
   NonPositiveInteger,
   isNonPositiveInteger,
   prismNonPositiveInteger,
-} from 'newtype-ts/lib/NonPositiveInteger';
-import { NonZero, isNonZero, prismNonZero } from 'newtype-ts/lib/NonZero';
+} from "newtype-ts/lib/NonPositiveInteger";
+import { NonZero, isNonZero, prismNonZero } from "newtype-ts/lib/NonZero";
 import {
   NonZeroInteger,
   isNonZeroInteger,
   prismNonZeroInteger,
-} from 'newtype-ts/lib/NonZeroInteger';
-import { Positive, isPositive, prismPositive } from 'newtype-ts/lib/Positive';
+} from "newtype-ts/lib/NonZeroInteger";
+import { Positive, isPositive, prismPositive } from "newtype-ts/lib/Positive";
 import {
   PositiveInteger,
   isPositiveInteger,
   prismPositiveInteger,
-} from 'newtype-ts/lib/PositiveInteger';
+} from "newtype-ts/lib/PositiveInteger";
 
 export {
   //#region  based

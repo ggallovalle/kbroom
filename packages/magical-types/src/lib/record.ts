@@ -1,4 +1,4 @@
-import type { SnakeCaseToCamelCase } from './string';
+import type { SnakeCaseToCamelCase } from "./string";
 
 export type RecordSnakeCaseToCamelCase<T> = {
   [K in keyof T as SnakeCaseToCamelCase<string & K>]: T[K] extends Array<
