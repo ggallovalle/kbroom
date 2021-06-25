@@ -14,12 +14,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "NDQxYzQxZDgtM2E0MC00ZWFmLWExNGEtNDVjYjZiOTMzNjI3fHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -28,19 +23,16 @@
   },
   "projects": {
     "fp-tk": {
-      "tags": [
-        "aggregator"
-      ]
+      "tags": ["aggregator"]
+    },
+    "gql-cron": {
+      "tags": ["graphql-scalar"]
     },
     "io-cron": {
-      "tags": [
-        "codec"
-      ]
+      "tags": ["codec"]
     },
     "magical-types": {
-      "tags": [
-        "types"
-      ]
+      "tags": ["types"]
     }
   },
   "workspaceLayout": {

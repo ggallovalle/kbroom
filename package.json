@@ -27,10 +27,12 @@
   },
   "private": true,
   "dependencies": {
+    "@kbroom/io-cron": "^0.1.0",
     "cron-parser": "^3.5.0",
     "fp-tk": "^2.0.0",
     "fp-ts": "2.10.5",
     "fp-ts-rxjs": "0.6.15",
+    "graphql": "^15.5.1",
     "io-ts": "2.2.16",
     "monocle-ts": "2.3.10",
     "newtype-ts": "0.3.4",

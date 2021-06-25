@@ -9,16 +9,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/fp-tk/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/fp-tk/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/fp-tk"
-          ],
+          "outputs": ["coverage/packages/fp-tk"],
           "options": {
             "jestConfig": "packages/fp-tk/jest.config.js",
             "passWithNoTests": true
@@ -26,23 +22,58 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/fp-tk",
             "tsConfig": "packages/fp-tk/tsconfig.lib.json",
             "packageJson": "packages/fp-tk/package.json",
             "main": "packages/fp-tk/src/index.ts",
-            "assets": [
-              "packages/fp-tk/*.md"
-            ]
+            "assets": ["packages/fp-tk/*.md"]
           }
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "cwd": "./dist/packages/fp-tk",
+            "command": "yarn publish --access public"
+          }
+        }
+      }
+    },
+    "gql-cron": {
+      "root": "packages/gql-cron",
+      "sourceRoot": "packages/gql-cron/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/gql-cron/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/gql-cron"],
+          "options": {
+            "jestConfig": "packages/gql-cron/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/gql-cron",
+            "tsConfig": "packages/gql-cron/tsconfig.lib.json",
+            "packageJson": "packages/gql-cron/package.json",
+            "main": "packages/gql-cron/src/index.ts",
+            "assets": ["packages/gql-cron/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "./dist/packages/gql-cron",
             "command": "yarn publish --access public"
           }
         }
@@ -56,16 +87,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/io-cron/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/io-cron/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/io-cron"
-          ],
+          "outputs": ["coverage/packages/io-cron"],
           "options": {
             "jestConfig": "packages/io-cron/jest.config.js",
             "passWithNoTests": true
@@ -73,17 +100,13 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/io-cron",
             "tsConfig": "packages/io-cron/tsconfig.lib.json",
             "packageJson": "packages/io-cron/package.json",
             "main": "packages/io-cron/src/index.ts",
-            "assets": [
-              "packages/io-cron/*.md"
-            ]
+            "assets": ["packages/io-cron/*.md"]
           }
         },
         "publish": {
@@ -103,16 +126,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/magical-types/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/magical-types/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/magical-types"
-          ],
+          "outputs": ["coverage/packages/magical-types"],
           "options": {
             "jestConfig": "packages/magical-types/jest.config.js",
             "passWithNoTests": true
@@ -120,17 +139,13 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/magical-types",
             "tsConfig": "packages/magical-types/tsconfig.lib.json",
             "packageJson": "packages/magical-types/package.json",
             "main": "packages/magical-types/src/index.ts",
-            "assets": [
-              "packages/magical-types/*.md"
-            ]
+            "assets": ["packages/magical-types/*.md"]
           }
         },
         "publish": {
