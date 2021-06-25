@@ -31,6 +31,9 @@
     "io-cron": {
       "tags": ["codec"]
     },
+    "io-email": {
+      "tags": []
+    },
     "magical-types": {
       "tags": ["types"]
     }

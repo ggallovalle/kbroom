@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@kbroom/io-email": ["packages/io-email/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

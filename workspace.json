@@ -118,6 +118,45 @@
         }
       }
     },
+    "io-email": {
+      "root": "packages/io-email",
+      "sourceRoot": "packages/io-email/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/io-email/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/io-email"],
+          "options": {
+            "jestConfig": "packages/io-email/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/io-email",
+            "tsConfig": "packages/io-email/tsconfig.lib.json",
+            "packageJson": "packages/io-email/package.json",
+            "main": "packages/io-email/src/index.ts",
+            "assets": ["packages/io-email/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "./dist/packages/io-email",
+            "command": "yarn publish --access public"
+          }
+        }
+      }
+    },
     "magical-types": {
       "root": "packages/magical-types",
       "sourceRoot": "packages/magical-types/src",

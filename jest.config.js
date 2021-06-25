@@ -4,5 +4,6 @@ module.exports = {
     "<rootDir>/packages/magical-types",
     "<rootDir>/packages/io-cron",
     "<rootDir>/packages/gql-cron",
+    "<rootDir>/packages/io-email",
   ],
 };
