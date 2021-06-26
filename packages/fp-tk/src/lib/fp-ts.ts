@@ -27,7 +27,6 @@ import {
   Predicate,
   Refinement,
 } from "fp-ts/function";
-import * as str from "fp-ts/string";
 
 // data structures
 import * as array from "fp-ts/Array";
@@ -85,7 +84,6 @@ export {
   Predicate,
   Refinement,
   //#endregion
-  str,
   array,
   arrayR,
   arrayNE,
