@@ -1,12 +1,12 @@
 {
   "name": "@kbroom/nestjs-shield",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "license": "MIT",
   "peerDependencies": {
-    "fp-tk": "2.0.0",
-    "@kbroom/nestjs-contextor": "0.0.1",
+    "fp-tk": "^2.0.0",
+    "@kbroom/nestjs-contextor": "^1.0.0",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
-    "@nestjs/graphql": "^7.11.0"
+    "@nestjs/graphql": "^7.0.0"
   }
 }

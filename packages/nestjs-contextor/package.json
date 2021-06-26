@@ -1,11 +1,11 @@
 {
   "name": "@kbroom/nestjs-contextor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "peerDependencies": {
-    "fp-tk": "2.0.0",
+    "fp-tk": "^2.0.0",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
-    "@nestjs/graphql": "^7.11.0"
+    "@nestjs/graphql": "^7.0.0"
   }
 }
