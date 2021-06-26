@@ -34,6 +34,9 @@
     "io-email": {
       "tags": []
     },
+    "io-encrypted": {
+      "tags": []
+    },
     "magical-types": {
       "tags": ["types"]
     }
