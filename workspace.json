@@ -295,6 +295,48 @@
         }
       }
     },
+    "nestjs-contextor": {
+      "root": "packages/nestjs-contextor",
+      "sourceRoot": "packages/nestjs-contextor/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/nestjs-contextor/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/nestjs-contextor"],
+          "options": {
+            "jestConfig": "packages/nestjs-contextor/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/nestjs-contextor",
+            "tsConfig": "packages/nestjs-contextor/tsconfig.lib.json",
+            "packageJson": "packages/nestjs-contextor/package.json",
+            "main": "packages/nestjs-contextor/src/index.ts",
+            "assets": ["packages/nestjs-contextor/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "parallel": false,
+            "commands": [
+              "nx run nestjs-contextor:build",
+              "yarn publish --access public dist/packages/nestjs-contextor"
+            ]
+          }
+        }
+      }
+    },
     "nestjs-shield": {
       "root": "packages/nestjs-shield",
       "sourceRoot": "packages/nestjs-shield/src",

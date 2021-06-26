@@ -1,5 +1,5 @@
 import { boolean, pipe } from "fp-tk";
-import { foldContext } from "../utils/fold-context.utils";
+import { foldContext } from "@kbroom/nestjs-contextor";
 import { UnauthorizedException } from "@nestjs/common";
 import { AuthenticationError } from "apollo-server-errors";
 
@@ -11,14 +11,14 @@ export const handleRequest = (err, user, info, context, status) =>
       () => {
         pipe(
           context,
-          foldContext(
-            (ctx) => {
+          foldContext({
+            graphql: () => {
+              throw new AuthenticationError("");
+            },
+            http: () => {
               throw new UnauthorizedException("");
             },
-            (ctx) => {
-              throw new AuthenticationError("");
-            }
-          )
+          })
         );
       }
     )

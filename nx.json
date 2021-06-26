@@ -48,6 +48,10 @@
     "magical-types": {
       "tags": ["types"]
     },
+    "nestjs-contextor": {
+      "tags": ["nestjs"],
+      "implicitDependencies": ["fp-tk"]
+    },
     "nestjs-shield": {
       "tags": ["nestjs"],
       "implicitDependencies": ["fp-tk"]

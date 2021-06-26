@@ -2,16 +2,16 @@ import { ExecutionContext, Injectable } from "@nestjs/common";
 import { AuthGuard } from "@nestjs/passport";
 import { handleRequest } from "./handle-request.util";
 import { pipe } from "fp-tk";
-import { foldContext } from "../utils/fold-context.utils";
+import { foldContext } from "@kbroom/nestjs-contextor";
 
 @Injectable()
 export class JwtGuard extends AuthGuard("jwt") {
   getRequest(executionContext: ExecutionContext) {
     return pipe(
       executionContext,
-      foldContext(
-        (ctx) => ctx.getRequest(),
-        (ctx) => {
+      foldContext({
+        http: (ctx) => ctx.getRequest(),
+        graphql: (ctx) => {
           const context = ctx.getContext();
           if (typeof context.headers?.authorization === "undefined") {
             throw new Error(
@@ -19,8 +19,8 @@ export class JwtGuard extends AuthGuard("jwt") {
             );
           }
           return context;
-        }
-      )
+        },
+      })
     );
   }
 
