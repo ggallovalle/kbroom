@@ -42,6 +42,9 @@
     },
     "magical-types": {
       "tags": ["types"]
+    },
+    "nestjs-shield": {
+      "tags": []
     }
   },
   "workspaceLayout": {

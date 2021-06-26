@@ -335,6 +335,46 @@
           }
         }
       }
+    },
+    "nestjs-shield": {
+      "root": "packages/nestjs-shield",
+      "sourceRoot": "packages/nestjs-shield/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/nestjs-shield/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/nestjs-shield"
+          ],
+          "options": {
+            "jestConfig": "packages/nestjs-shield/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/nestjs-shield",
+            "tsConfig": "packages/nestjs-shield/tsconfig.lib.json",
+            "packageJson": "packages/nestjs-shield/package.json",
+            "main": "packages/nestjs-shield/src/index.ts",
+            "assets": [
+              "packages/nestjs-shield/*.md"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
