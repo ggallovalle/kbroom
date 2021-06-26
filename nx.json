@@ -26,25 +26,31 @@
       "tags": ["aggregator"]
     },
     "gql-cron": {
-      "tags": ["graphql-scalar"]
+      "tags": ["graphql-scalar"],
+      "implicitDependencies": ["fp-tk", "io-cron"]
     },
     "gql-encrypted": {
-      "tags": []
+      "tags": ["graphql-scalar"],
+      "implicitDependencies": ["fp-tk", "io-encrypted"]
     },
     "io-cron": {
-      "tags": ["codec"]
+      "tags": ["codec"],
+      "implicitDependencies": ["fp-tk"]
     },
     "io-email": {
-      "tags": []
+      "tags": ["codec"],
+      "implicitDependencies": ["fp-tk"]
     },
     "io-encrypted": {
-      "tags": []
+      "tags": ["codec"],
+      "implicitDependencies": ["fp-tk"]
     },
     "magical-types": {
       "tags": ["types"]
     },
     "nestjs-shield": {
-      "tags": []
+      "tags": ["nestjs"],
+      "implicitDependencies": ["fp-tk"]
     }
   },
   "workspaceLayout": {
