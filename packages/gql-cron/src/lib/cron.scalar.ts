@@ -1,4 +1,12 @@
-import { either, flow, pipe } from "fp-tk";
+import {
+  either,
+  flow,
+  pipe,
+  boolean,
+  thrower,
+  identity,
+  constant,
+} from "fp-tk";
 import { Cron, CronCodec } from "@kbroom/io-cron";
 import {
   GraphQLError,
@@ -10,12 +18,11 @@ import {
 const parseCron = flow(
   CronCodec.decode,
   either.fold(
-    (reason: any) => {
-      throw new TypeError(
+    (reason) =>
+      thrower(TypeError)(
         `Cron cannot represent non-cron value '${reason.value.actual}'`
-      );
-    },
-    (ok) => ok
+      ),
+    identity
   )
 );
 
@@ -25,14 +32,18 @@ const GraphQLCronConfig: GraphQLScalarTypeConfig<Cron, string> = {
     "The `Cron` type represents a cronjob that is a timed based scheduler, see https://crontab.guru/",
   serialize: CronCodec.encode,
   parseValue: parseCron,
-  parseLiteral: (ast) => {
-    if (ast.kind !== Kind.STRING) {
-      throw new GraphQLError(
-        `Can only validate string as cron but got a : ${ast.kind}`
-      );
-    }
-    return pipe(ast.value, parseCron);
-  },
+  parseLiteral: (ast) =>
+    pipe(
+      ast.kind !== Kind.STRING,
+      boolean.fold(
+        constant(
+          thrower(GraphQLError)(
+            `Can only validate string as cron but got a : ${ast.kind}`
+          )
+        ),
+        flow(ast.value, parseCron)
+      )
+    ),
   specifiedByUrl: "https://en.wikipedia.org/wiki/Cron",
 };
 
