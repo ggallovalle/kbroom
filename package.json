@@ -30,6 +30,9 @@
   "dependencies": {
     "@kbroom/io-cron": "^0.1.0",
     "@kbroom/io-encrypted": "^0.0.2",
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
     "bcrypt": "^5.0.1",
     "cron-parser": "^3.5.0",
     "fp-tk": "^2.0.0",
@@ -39,13 +42,18 @@
     "io-ts": "2.2.16",
     "monocle-ts": "2.3.10",
     "newtype-ts": "0.3.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "~6.6.3",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
     "@nrwl/cli": "12.4.0",
     "@nrwl/eslint-plugin-nx": "12.4.0",
     "@nrwl/jest": "12.4.0",
     "@nrwl/linter": "12.4.0",
+    "@nrwl/nest": "12.4.0",
     "@nrwl/node": "^12.4.0",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "12.4.0",

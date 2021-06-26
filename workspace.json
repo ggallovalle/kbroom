@@ -9,12 +9,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/fp-tk/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/fp-tk/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/fp-tk"],
+          "outputs": [
+            "coverage/packages/fp-tk"
+          ],
           "options": {
             "jestConfig": "packages/fp-tk/jest.config.js",
             "passWithNoTests": true
@@ -22,13 +26,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/fp-tk",
             "tsConfig": "packages/fp-tk/tsconfig.lib.json",
             "packageJson": "packages/fp-tk/package.json",
             "main": "packages/fp-tk/src/index.ts",
-            "assets": ["packages/fp-tk/*.md"]
+            "assets": [
+              "packages/fp-tk/*.md"
+            ]
           }
         },
         "publish": {
@@ -48,12 +56,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/gql-cron/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/gql-cron/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/gql-cron"],
+          "outputs": [
+            "coverage/packages/gql-cron"
+          ],
           "options": {
             "jestConfig": "packages/gql-cron/jest.config.js",
             "passWithNoTests": true
@@ -61,13 +73,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/gql-cron",
             "tsConfig": "packages/gql-cron/tsconfig.lib.json",
             "packageJson": "packages/gql-cron/package.json",
             "main": "packages/gql-cron/src/index.ts",
-            "assets": ["packages/gql-cron/*.md"]
+            "assets": [
+              "packages/gql-cron/*.md"
+            ]
           }
         },
         "publish": {
@@ -87,12 +103,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/gql-encrypted/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/gql-encrypted/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/gql-encrypted"],
+          "outputs": [
+            "coverage/packages/gql-encrypted"
+          ],
           "options": {
             "jestConfig": "packages/gql-encrypted/jest.config.js",
             "passWithNoTests": true
@@ -100,13 +120,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/gql-encrypted",
             "tsConfig": "packages/gql-encrypted/tsconfig.lib.json",
             "packageJson": "packages/gql-encrypted/package.json",
             "main": "packages/gql-encrypted/src/index.ts",
-            "assets": ["packages/gql-encrypted/*.md"]
+            "assets": [
+              "packages/gql-encrypted/*.md"
+            ]
           }
         },
         "publish": {
@@ -129,12 +153,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/io-cron/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/io-cron/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/io-cron"],
+          "outputs": [
+            "coverage/packages/io-cron"
+          ],
           "options": {
             "jestConfig": "packages/io-cron/jest.config.js",
             "passWithNoTests": true
@@ -142,13 +170,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/io-cron",
             "tsConfig": "packages/io-cron/tsconfig.lib.json",
             "packageJson": "packages/io-cron/package.json",
             "main": "packages/io-cron/src/index.ts",
-            "assets": ["packages/io-cron/*.md"]
+            "assets": [
+              "packages/io-cron/*.md"
+            ]
           }
         },
         "publish": {
@@ -168,12 +200,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/io-email/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/io-email/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/io-email"],
+          "outputs": [
+            "coverage/packages/io-email"
+          ],
           "options": {
             "jestConfig": "packages/io-email/jest.config.js",
             "passWithNoTests": true
@@ -181,13 +217,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/io-email",
             "tsConfig": "packages/io-email/tsconfig.lib.json",
             "packageJson": "packages/io-email/package.json",
             "main": "packages/io-email/src/index.ts",
-            "assets": ["packages/io-email/*.md"]
+            "assets": [
+              "packages/io-email/*.md"
+            ]
           }
         },
         "publish": {
@@ -207,12 +247,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/io-encrypted/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/io-encrypted/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/io-encrypted"],
+          "outputs": [
+            "coverage/packages/io-encrypted"
+          ],
           "options": {
             "jestConfig": "packages/io-encrypted/jest.config.js",
             "passWithNoTests": true
@@ -220,13 +264,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/io-encrypted",
             "tsConfig": "packages/io-encrypted/tsconfig.lib.json",
             "packageJson": "packages/io-encrypted/package.json",
             "main": "packages/io-encrypted/src/index.ts",
-            "assets": ["packages/io-encrypted/*.md"]
+            "assets": [
+              "packages/io-encrypted/*.md"
+            ]
           }
         },
         "publish": {
@@ -249,12 +297,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/magical-types/**/*.ts"]
+            "lintFilePatterns": [
+              "packages/magical-types/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/magical-types"],
+          "outputs": [
+            "coverage/packages/magical-types"
+          ],
           "options": {
             "jestConfig": "packages/magical-types/jest.config.js",
             "passWithNoTests": true
@@ -262,13 +314,17 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/packages/magical-types",
             "tsConfig": "packages/magical-types/tsconfig.lib.json",
             "packageJson": "packages/magical-types/package.json",
             "main": "packages/magical-types/src/index.ts",
-            "assets": ["packages/magical-types/*.md"]
+            "assets": [
+              "packages/magical-types/*.md"
+            ]
           }
         },
         "publish": {
@@ -282,6 +338,6 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/nest"
   }
 }
