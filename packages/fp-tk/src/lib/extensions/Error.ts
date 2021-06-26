@@ -5,7 +5,7 @@ import { Constructor } from "@kbroom/magical-types";
  * @returns void
  */
 export const thrower = <T extends Constructor<Error>>(klass: T) => (
-  msg: any
+  ...msg: any
 ): never => {
-  throw new klass(msg);
+  throw new klass(...msg);
 };
