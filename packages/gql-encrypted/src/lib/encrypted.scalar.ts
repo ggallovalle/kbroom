@@ -1,4 +1,12 @@
-import { either, flow, pipe } from "fp-tk";
+import {
+  boolean,
+  constant,
+  either,
+  flow,
+  identity,
+  pipe,
+  thrower,
+} from "fp-tk";
 import { Encrypted, EncryptedCodec } from "@kbroom/io-encrypted";
 import {
   GraphQLError,
@@ -10,10 +18,8 @@ import {
 const parseEncrypted = flow(
   EncryptedCodec.decode,
   either.fold(
-    () => {
-      throw new TypeError("Value cannot be encrypted");
-    },
-    (ok) => ok
+    constant(thrower(TypeError)("Value cannot be encrypted")),
+    identity
   )
 );
 
@@ -23,14 +29,20 @@ const GraphQLEncryptedConfig: GraphQLScalarTypeConfig<Encrypted, string> = {
     "The `Encrypted` type represents a value that is meant to be stored in a bcrypt encrypted form",
   serialize: EncryptedCodec.encode,
   parseValue: parseEncrypted,
-  parseLiteral: (ast) => {
-    if (ast.kind !== Kind.STRING) {
-      throw new GraphQLError(
-        `Can only validate string as encrypted but got a : ${ast.kind}`
-      );
-    }
-    return pipe(ast.value, parseEncrypted);
-  },
+
+  parseLiteral: (ast) =>
+    pipe(
+      ast.kind !== Kind.STRING,
+      boolean.fold(
+        constant(
+          thrower(GraphQLError)(
+            `Can only validate string as encrypted but got a : ${ast.kind}`
+          )
+        ),
+        flow(ast.value, parseEncrypted)
+      )
+    ),
+
   specifiedByUrl: "https://en.wikipedia.org/wiki/Bcrypt",
 };
 
