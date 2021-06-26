@@ -28,6 +28,9 @@
     "gql-cron": {
       "tags": ["graphql-scalar"]
     },
+    "gql-encrypted": {
+      "tags": []
+    },
     "io-cron": {
       "tags": ["codec"]
     },

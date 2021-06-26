@@ -23,11 +23,13 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "deploy": "nx publish"
   },
   "private": true,
   "dependencies": {
     "@kbroom/io-cron": "^0.1.0",
+    "@kbroom/io-encrypted": "^0.0.2",
     "bcrypt": "^5.0.1",
     "cron-parser": "^3.5.0",
     "fp-tk": "^2.0.0",

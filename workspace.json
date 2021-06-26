@@ -79,6 +79,48 @@
         }
       }
     },
+    "gql-encrypted": {
+      "root": "packages/gql-encrypted",
+      "sourceRoot": "packages/gql-encrypted/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/gql-encrypted/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/gql-encrypted"],
+          "options": {
+            "jestConfig": "packages/gql-encrypted/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/gql-encrypted",
+            "tsConfig": "packages/gql-encrypted/tsconfig.lib.json",
+            "packageJson": "packages/gql-encrypted/package.json",
+            "main": "packages/gql-encrypted/src/index.ts",
+            "assets": ["packages/gql-encrypted/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "parallel": false,
+            "commands": [
+              "nx run gql-encrypted:build",
+              "yarn publish --access public dist/packages/gql-encrypted"
+            ]
+          }
+        }
+      }
+    },
     "io-cron": {
       "root": "packages/io-cron",
       "sourceRoot": "packages/io-cron/src",
@@ -190,8 +232,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/io-encrypted",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run io-encrypted:build",
+              "yarn publish --access public dist/packages/io-encrypted"
+            ]
           }
         }
       }

@@ -535,6 +535,11 @@
   resolved "https://registry.yarnpkg.com/@kbroom/io-cron/-/io-cron-0.1.0.tgz#4310b01cc341de587d2885360dd09e553e269178"
   integrity sha512-yRv+kSk1513RblfnqaIlY/HAFw/uZEx0wBJuM2EM4PkSSBVKotJDmksTA/U8hlVBZQ4pspphuGZaAxJkFhdfBg==
 
+"@kbroom/io-encrypted@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@kbroom/io-encrypted/-/io-encrypted-0.0.2.tgz#d212ba86821791331af7bc23ad2ec3bff35fa03a"
+  integrity sha512-X4o0Qe3nCiS23ctV/yqV4+GEFcBK8599LPi9j2nEceytHmSyyXti0A7cGKfUjiLdQIdC7uLLWQBiQOE/uWBghg==
+
 "@mapbox/node-pre-gyp@^1.0.0":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.5.tgz#2a0b32fcb416fb3f2250fd24cb2a81421a4f5950"
