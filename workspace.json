@@ -34,11 +34,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run fp-tk:build",
-              "yarn publish --access public dist/packages/fp-tk"
-            ]
+            "command": "bash tools/publish.sh fp-tk"
           }
         }
       }
@@ -76,11 +72,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run gql-cron:build",
-              "yarn publish --access public dist/packages/gql-cron"
-            ]
+            "command": "bash tools/publish.sh gql-cron"
           }
         }
       }
@@ -118,11 +110,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run gql-email:build",
-              "yarn publish --access public dist/packages/gql-email"
-            ]
+            "command": "bash tools/publish.sh gql-email"
           }
         }
       }
@@ -161,10 +149,7 @@
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "parallel": false,
-            "commands": [
-              "nx run gql-encrypted:build",
-              "yarn publish --access public dist/packages/gql-encrypted"
-            ]
+            "command": "bash tools/publish.sh gql-encrypted"
           }
         }
       }
@@ -202,11 +187,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run io-cron:build",
-              "yarn publish --access public dist/packages/io-cron"
-            ]
+            "command": "bash tools/publish.sh io-cron"
           }
         }
       }
@@ -244,11 +225,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run io-email:build",
-              "yarn publish --access public dist/packages/io-email"
-            ]
+            "command": "bash tools/publish.sh io-email"
           }
         }
       }
@@ -286,11 +263,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run io-encrypted:build",
-              "yarn publish --access public dist/packages/io-encrypted"
-            ]
+            "command": "bash tools/publish.sh io-encrypted"
           }
         }
       }
@@ -328,11 +301,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run magical-types:build",
-              "yarn publish --access public dist/packages/magical-types"
-            ]
+            "command": "bash tools/publish.sh magical-types"
           }
         }
       }
@@ -370,11 +339,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run nestjs-contextor:build",
-              "yarn publish --access public dist/packages/nestjs-contextor"
-            ]
+            "command": "bash tools/publish.sh nestjs-contextor"
           }
         }
       }
@@ -412,11 +377,7 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "parallel": false,
-            "commands": [
-              "nx run nestjs-shield:build",
-              "yarn publish --access public dist/packages/nestjs-shield"
-            ]
+            "command": "bash tools/publish.sh nestjs-shield"
           }
         }
       }

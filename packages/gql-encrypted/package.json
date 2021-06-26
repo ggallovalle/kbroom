@@ -1,10 +1,9 @@
 {
   "name": "@kbroom/gql-encrypted",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "license": "MIT",
   "peerDependencies": {
-    "fp-tk": "2.0.0",
-    "@kbroom/io-encrypted": "0.0.3",
-    "graphql": "15.5.1"
+    "@kbroom/io-encrypted": "^1.1.0",
+    "graphql": "*"
   }
 }
