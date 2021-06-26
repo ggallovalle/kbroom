@@ -268,6 +268,38 @@
         }
       }
     },
+    "jest-fp": {
+      "root": "packages/jest-fp",
+      "sourceRoot": "packages/jest-fp/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/jest-fp/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/jest-fp"],
+          "options": {
+            "jestConfig": "packages/jest-fp/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/jest-fp",
+            "tsConfig": "packages/jest-fp/tsconfig.lib.json",
+            "packageJson": "packages/jest-fp/package.json",
+            "main": "packages/jest-fp/src/index.ts",
+            "assets": ["packages/jest-fp/*.md"]
+          }
+        }
+      }
+    },
     "magical-types": {
       "root": "packages/magical-types",
       "sourceRoot": "packages/magical-types/src",

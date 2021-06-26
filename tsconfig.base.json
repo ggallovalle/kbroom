@@ -15,20 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      /** base  **/
-      "fp-tk": ["packages/fp-tk/src/index.ts"],
-      "@kbroom/magical-types": ["packages/magical-types/src/index.ts"],
-      "@kbroom/nestjs-contextor": ["packages/nestjs-contextor/src/index.ts"],
-      /** io  **/
-      "@kbroom/io-cron": ["packages/io-cron/src/index.ts"],
-      "@kbroom/io-email": ["packages/io-email/src/index.ts"],
-      "@kbroom/io-encrypted": ["packages/io-encrypted/src/index.ts"],
-      /** graphql scalars  **/
       "@kbroom/gql-cron": ["packages/gql-cron/src/index.ts"],
       "@kbroom/gql-email": ["packages/gql-email/src/index.ts"],
       "@kbroom/gql-encrpypted": ["packages/gql-encrypted/src/index.ts"],
-      /** nestjs **/
-      "@kbroom/nestjs-shield": ["packages/nestjs-shield/src/index.ts"]
+      "@kbroom/io-cron": ["packages/io-cron/src/index.ts"],
+      "@kbroom/io-email": ["packages/io-email/src/index.ts"],
+      "@kbroom/io-encrypted": ["packages/io-encrypted/src/index.ts"],
+      "@kbroom/jest-fp": ["packages/jest-fp/src/index.ts"],
+      "@kbroom/magical-types": ["packages/magical-types/src/index.ts"],
+      "@kbroom/nestjs-contextor": ["packages/nestjs-contextor/src/index.ts"],
+      "@kbroom/nestjs-shield": ["packages/nestjs-shield/src/index.ts"],
+      "fp-tk": ["packages/fp-tk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
