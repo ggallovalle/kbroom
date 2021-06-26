@@ -5,17 +5,24 @@ import {
   GraphQLScalarTypeConfig,
 } from "graphql";
 import { Email, EmailCodec } from "@kbroom/io-email";
-import { either, flow, pipe } from "fp-tk";
+import {
+  boolean,
+  constant,
+  either,
+  flow,
+  identity,
+  pipe,
+  thrower,
+} from "fp-tk";
 
 const parseEmail = flow(
   EmailCodec.decode,
   either.fold(
-    (reason: any) => {
-      throw new TypeError(
-        `Email cannot represent non-email value '${reason.value.actual}'`
-      );
-    },
-    (ok) => ok
+    (reason) =>
+      thrower(TypeError)(
+        `Cron cannot represent non-email value '${reason.value.actual}'`
+      ),
+    identity
   )
 );
 
@@ -29,15 +36,18 @@ const GraphQEmailConfig: GraphQLScalarTypeConfig<Email, string> = {
 
   parseValue: parseEmail,
 
-  parseLiteral(ast) {
-    if (ast.kind !== Kind.STRING) {
-      throw new GraphQLError(
-        `Can only validate strings as email but got a: ${ast.kind}`
-      );
-    }
-
-    return pipe(ast.value, parseEmail);
-  },
+  parseLiteral: (ast) =>
+    pipe(
+      ast.kind !== Kind.STRING,
+      boolean.fold(
+        constant(
+          thrower(GraphQLError)(
+            `Can only validate strings as email but got a: ${ast.kind}`
+          )
+        ),
+        flow(ast.value, parseEmail)
+      )
+    ),
 
   specifiedByUrl: "https://www.w3.org/Protocols/rfc822/",
 };
