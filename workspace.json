@@ -85,6 +85,48 @@
         }
       }
     },
+    "gql-email": {
+      "root": "packages/gql-email",
+      "sourceRoot": "packages/gql-email/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/gql-email/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/gql-email"],
+          "options": {
+            "jestConfig": "packages/gql-email/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/gql-email",
+            "tsConfig": "packages/gql-email/tsconfig.lib.json",
+            "packageJson": "packages/gql-email/package.json",
+            "main": "packages/gql-email/src/index.ts",
+            "assets": ["packages/gql-email/*.md"]
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "parallel": false,
+            "commands": [
+              "nx run gql-email:build",
+              "yarn publish --access public dist/packages/gql-email"
+            ]
+          }
+        }
+      }
+    },
     "gql-encrypted": {
       "root": "packages/gql-encrypted",
       "sourceRoot": "packages/gql-encrypted/src",

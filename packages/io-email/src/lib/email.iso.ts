@@ -1,8 +1,8 @@
 import { nt } from "fp-tk";
 
-export type EmailAddress = nt.Newtype<
+export type Email = nt.Newtype<
   { readonly EmailAddress: unique symbol },
   string
 >;
 
-export const EmailAddress = nt.iso<EmailAddress>();
+export const Email = nt.iso<Email>();

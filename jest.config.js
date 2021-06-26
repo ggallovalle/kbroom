@@ -9,5 +9,6 @@ module.exports = {
     "<rootDir>/packages/gql-encrypted",
     "<rootDir>/packages/nestjs-shield",
     "<rootDir>/packages/nestjs-contextor",
+    "<rootDir>/packages/gql-email",
   ],
 };

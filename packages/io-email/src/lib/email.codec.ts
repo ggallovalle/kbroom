@@ -1,5 +1,5 @@
 import { boolean, decoder, pipe, codec } from "fp-tk";
-import { EmailAddress } from "./email.iso";
+import { Email } from "./email.iso";
 
 export const EmailCodec = codec.make(
   pipe(
@@ -10,12 +10,12 @@ export const EmailCodec = codec.make(
         EMAIL_ADDRESS_REGEX.test(val),
         boolean.fold(
           () => decoder.failure(val, `it isn't a valid email address ${val}`),
-          () => decoder.success(EmailAddress.wrap(val))
+          () => decoder.success(Email.wrap(val))
         )
       );
     })
   ),
   {
-    encode: EmailAddress.unwrap,
+    encode: Email.unwrap,
   }
 );

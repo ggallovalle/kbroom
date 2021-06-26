@@ -27,11 +27,15 @@
     },
     "gql-cron": {
       "tags": ["graphql-scalar"],
-      "implicitDependencies": ["fp-tk", "io-cron"]
+      "implicitDependencies": ["io-cron"]
+    },
+    "gql-email": {
+      "tags": ["graphql-scalar"],
+      "implicitDependencies": ["io-email"]
     },
     "gql-encrypted": {
       "tags": ["graphql-scalar"],
-      "implicitDependencies": ["fp-tk", "io-encrypted"]
+      "implicitDependencies": ["io-encrypted"]
     },
     "io-cron": {
       "tags": ["codec"],
