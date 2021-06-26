@@ -21,7 +21,6 @@ export const EncryptedCodec = codec.make(
   }
 );
 
-export const isEncryptedTheSame = (
-  data: string,
+export const isEncryptedTheSame = (data: string) => (
   encrypted: Encrypted
 ): boolean => compareSync(data, Encrypted.unwrap(encrypted));

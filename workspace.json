@@ -34,8 +34,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/fp-tk",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run fp-tk:build",
+              "yarn publish --access public dist/packages/fp-tk"
+            ]
           }
         }
       }
@@ -73,8 +76,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/gql-cron",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run gql-cron:build",
+              "yarn publish --access public dist/packages/gql-cron"
+            ]
           }
         }
       }
@@ -154,8 +160,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/io-cron",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run io-cron:build",
+              "yarn publish --access public dist/packages/io-cron"
+            ]
           }
         }
       }
@@ -193,8 +202,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/io-email",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run io-email:build",
+              "yarn publish --access public dist/packages/io-email"
+            ]
           }
         }
       }
@@ -274,8 +286,11 @@
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "cwd": "./dist/packages/magical-types",
-            "command": "yarn publish --access public"
+            "parallel": false,
+            "commands": [
+              "nx run magical-types:build",
+              "yarn publish --access public dist/packages/magical-types"
+            ]
           }
         }
       }

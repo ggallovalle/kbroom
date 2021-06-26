@@ -1,6 +1,6 @@
 {
   "name": "@kbroom/io-encrypted",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "peerDependencies": {
     "bcrypt": "5.0.1",
