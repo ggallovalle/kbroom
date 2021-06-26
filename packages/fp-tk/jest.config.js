@@ -1,6 +1,7 @@
 module.exports = {
   displayName: "fp-tk",
   preset: "../../jest.preset.js",
+ "setupFilesAfterEnv": ["jest-extended"],
   globals: {
     "ts-jest": {
       tsconfig: "<rootDir>/tsconfig.spec.json",

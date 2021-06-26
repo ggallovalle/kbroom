@@ -1,4 +1,4 @@
-import { none, some } from "fp-ts/lib/Option";
+import { none, some, isNone, isSome } from "fp-ts/lib/Option";
 import { isEmptyToNone, isNanToNone, minusOneToNone } from "./Option";
 describe("Option extensions", () => {
   describe("minusOneToNone", () => {
@@ -9,7 +9,7 @@ describe("Option extensions", () => {
       // Act
       const actual = minusOneToNone(minusOne);
       // Assert
-      expect(actual).toBe(expected);
+      expect(isNone(actual)).toBeTrue();
     });
 
     it("should be `some` when different than -1", () => {
