@@ -1,4 +1,4 @@
-import matchers from "./matchers";
+import matchers from "./lib/matchers";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const jestExpect = (global as any).expect;
