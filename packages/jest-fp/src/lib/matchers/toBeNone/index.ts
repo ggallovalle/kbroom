@@ -1,40 +1,44 @@
-import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
-import predicate from "./predicate";
-import { MatchersObject } from "expect/build/types";
-import { option } from "fp-tk";
-import { foldMatcher } from "../../utils/fold-matcher.util";
-
-const passMessage = (received) => () =>
-  `${matcherHint(".not.toBeNone", "received", "")}
-
-  Expected value to be some received:
-    ${printReceived(received)}
-`;
-// const passMessage = (received) => () =>
-//   matcherHint(".not.toBeTrue", "received", "") +
-//   "\n\n" +
-//   "Expected value to not be true received:\n" +
-//   `  ${printReceived(received)}`;
-
-const failMessage = (received) => () =>
-  ` ${matcherHint(".toBeNone", "received", "")}
-
-    Expected value to be none:
-      ${printExpected(option.none)}
-    Received:
-      ${printReceived(received)}`;
-
-// const failMessage = (received) => () =>
-//   matcherHint(".toBeTrue", "received", "") +
-//   "\n\n" +
-//   "Expected value to be true:\n" +
-//   `  ${printExpected(true)}\n` +
-//   "Received:\n" +
-//   `  ${printReceived(received)}`;
+import { MatchersObject, MatcherState } from "expect/build/types";
+import { ensureNoExpected, MatcherHintOptions } from "jest-matcher-utils";
+import { isNotPredicate, isNotPredicateExpected, predicate } from "./predicate";
+import { printer, SHOULD_NEVER_HAPPEN } from "../../utils/printer.util";
 
 export default {
-  toBeNone: foldMatcher(predicate, {
-    onFail: failMessage,
-    onPass: passMessage,
-  }),
+  toBeNone(this: MatcherState, received: unknown, expected: unknown) {
+    const matcherName = "toBeNone";
+    let pass: boolean;
+    let message: () => string;
+    const options: MatcherHintOptions = {
+      isNot: this.isNot,
+      promise: this.promise,
+      comment: "fp-ts Option isNone check",
+    };
+    if (!this.isNot) {
+      ensureNoExpected(expected, matcherName, options);
+      pass = predicate(received);
+      message = pass
+        ? () => SHOULD_NEVER_HAPPEN
+        : () => printer(matcherName, received, expected, options, this.expand);
+    } else {
+      if (expected) {
+        pass = !isNotPredicateExpected(received, expected);
+        message = pass
+          ? () => printer(matcherName, received, expected, options, this.expand)
+          : () => SHOULD_NEVER_HAPPEN;
+      } else {
+        pass = !isNotPredicate(received);
+        message = pass
+          ? () =>
+              printer(matcherName, received, undefined, options, this.expand)
+          : () => SHOULD_NEVER_HAPPEN;
+      }
+    }
+    return {
+      pass,
+      name: matcherName,
+      message,
+      actual: received,
+      expected,
+    };
+  },
 } as MatchersObject;

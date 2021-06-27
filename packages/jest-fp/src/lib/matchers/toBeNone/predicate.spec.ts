@@ -1,6 +1,6 @@
 import { option } from "fp-tk";
 
-import predicate from "./predicate";
+import { predicate } from "./predicate";
 const cases = [
   [option.none, true],
   [true, false],

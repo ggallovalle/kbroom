@@ -1,30 +1,24 @@
 import { ExpectationResult } from "expect/build/types";
-import { boolean, pipe, Predicate } from "fp-tk";
-type MatcherMsgFolder = (received: unknown) => () => string;
-const passFlow = (msgCreator: MatcherMsgFolder) => (
-  received: unknown
-): ExpectationResult => ({
+import { boolean, Lazy, pipe, Predicate } from "fp-tk";
+
+const pass = (message: Lazy<string>): ExpectationResult => ({
   pass: true,
-  message: msgCreator(received),
+  message,
 });
 
-const failFlow = (msgCreator: MatcherMsgFolder) => (
-  received: unknown
-): ExpectationResult => ({
+const fail = (message: Lazy<string>): ExpectationResult => ({
   pass: false,
-  message: msgCreator(received),
+  message,
 });
 
 export const foldMatcher = (
   predicate: Predicate<unknown>,
-  messages: { onPass: MatcherMsgFolder; onFail: MatcherMsgFolder },
-  contrapart?: Predicate<unknown>
-) => (received: unknown, expected: unknown, options: any) =>
-  // ) => (received: unknown, expected: any, options?: any) =>
+  messages: { pass: Lazy<string>; fail: Lazy<string> }
+) => (received: unknown) =>
   pipe(
     predicate(received),
     boolean.fold(
-      () => failFlow(messages.onFail)(received),
-      () => passFlow(messages.onPass)(received)
+      () => fail(messages.fail),
+      () => pass(messages.pass)
     )
   );
