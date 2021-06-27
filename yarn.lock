@@ -733,10 +733,10 @@
   resolved "https://registry.yarnpkg.com/@josephg/resolvable/-/resolvable-1.0.1.tgz#69bc4db754d79e1a2f17a650d3466e038d94a5eb"
   integrity sha512-CtzORUwWTTOTqfVtHaKRJ0I1kNQd1bpn3sUh8I3nJDVY+5/M/Oe1DnEWzPQvqq/xPIIkzzzIP7mfCoAjFRvDhg==
 
-"@kbroom/jest-fp-ts@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@kbroom/jest-fp-ts/-/jest-fp-ts-0.0.3.tgz#5bfa746a49d07870b9eebc8179021ecbc1ecb854"
-  integrity sha512-xv2/klUPotQ8ACbbFITuvfcqKv36gi/GWQApIAWw+RHuJ/lQOVVebFiRks8NhiNyJ5h2mG74te2RzMahU4x06g==
+"@kbroom/jest-fp-ts@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@kbroom/jest-fp-ts/-/jest-fp-ts-0.0.4.tgz#09a8604416f78113bafb64e0512d25631f2f471f"
+  integrity sha512-c3qfTfP17QU9IWC3KA+fdyzQDneTbj6fN2uODhbUBTObH1qMTY97aoBewH1Ve+pxpah45avTsdwiidWZlV6VmA==
   dependencies:
     expect "^27.0.2"
     jest-matcher-utils "^27.0.2"

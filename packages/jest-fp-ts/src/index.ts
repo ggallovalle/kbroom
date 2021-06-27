@@ -6,6 +6,18 @@ const jestExpect = (global as any).expect;
 declare global {
   namespace jest {
     interface Matchers<R> {
+      /**
+       * Check if received is None.
+       *
+       * **.not** - check if expected is `some` either wrapped or unwrapped
+       * @example
+       * import {option} from "fp-ts"
+       *
+       *  expect(option.none).toBeNone();
+       *  expect(option.some(1).not.toBeNone()
+       *  expect(option.some(1).not.toBeNone(1)
+       *  expect(option.some(1).not.toBeNone(some(1))
+       */
       toBeNone(expected?: unknown): R;
     }
   }
