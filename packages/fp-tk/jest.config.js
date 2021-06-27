@@ -1,7 +1,7 @@
 module.exports = {
   displayName: "fp-tk",
   preset: "../../jest.preset.js",
- "setupFilesAfterEnv": ["jest-extended"],
+  setupFilesAfterEnv: ["jest-extended", "@kbroom/jest-fp-ts"],
   globals: {
     "ts-jest": {
       tsconfig: "<rootDir>/tsconfig.spec.json",

@@ -6,7 +6,7 @@ describe("Option extensions", () => {
       // Act
       const actual = _.negativeToNone(-1);
       // Assert
-      expect(actual).toEqual(_.none);
+      expect(actual).toBeNone();
     });
 
     it("should be `some` when different than -1", () => {
@@ -25,7 +25,7 @@ describe("Option extensions", () => {
       // Act
       const actual = _.NaNToNone(NaN);
       // Assert
-      expect(actual).toBe(_.none);
+      expect(actual).toBeNone();
     });
 
     it("should be `some` when a number", () => {
@@ -44,7 +44,7 @@ describe("Option extensions", () => {
       // Act
       const actual = _.emptyStringToNone("");
       // Assert
-      expect(actual).toBe(_.none);
+      expect(actual).toBeNone();
     });
 
     it("should be `some` when a non empty string", () => {

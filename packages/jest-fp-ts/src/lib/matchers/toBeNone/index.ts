@@ -2,6 +2,7 @@ import { MatchersObject, MatcherState } from "expect/build/types";
 import { ensureNoExpected, MatcherHintOptions } from "jest-matcher-utils";
 import { isNotPredicate, isNotPredicateExpected, predicate } from "./predicate";
 import { printer, SHOULD_NEVER_HAPPEN } from "../../utils/printer.util";
+import { option } from "fp-tk";
 
 export default {
   toBeNone(this: MatcherState, received: unknown, expected: unknown) {
@@ -18,7 +19,8 @@ export default {
       pass = predicate(received);
       message = pass
         ? () => SHOULD_NEVER_HAPPEN
-        : () => printer(matcherName, received, expected, options, this.expand);
+        : () =>
+            printer(matcherName, received, option.none, options, this.expand);
     } else {
       if (expected) {
         pass = !isNotPredicateExpected(received, expected);

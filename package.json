@@ -57,6 +57,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@kbroom/jest-fp-ts": "^0.0.3",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@nrwl/cli": "12.4.0",
