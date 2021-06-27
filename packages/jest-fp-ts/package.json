@@ -1,5 +1,5 @@
 {
-  "name": "@kbroom/jest-fp",
+  "name": "@kbroom/jest-fp-ts",
   "version": "0.0.1",
   "license": "MIT",
   "peerDependencies": {

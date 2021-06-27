@@ -10,6 +10,6 @@ module.exports = {
     "<rootDir>/packages/nestjs-shield",
     "<rootDir>/packages/nestjs-contextor",
     "<rootDir>/packages/gql-email",
-    "<rootDir>/packages/jest-fp",
+    "<rootDir>/packages/jest-fp-ts",
   ],
 };

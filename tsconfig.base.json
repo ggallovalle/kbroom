@@ -21,7 +21,7 @@
       "@kbroom/io-cron": ["packages/io-cron/src/index.ts"],
       "@kbroom/io-email": ["packages/io-email/src/index.ts"],
       "@kbroom/io-encrypted": ["packages/io-encrypted/src/index.ts"],
-      "@kbroom/jest-fp": ["packages/jest-fp/src/index.ts"],
+      "@kbroom/jest-fp-ts": ["packages/jest-fp-ts/src/index.ts"],
       "@kbroom/magical-types": ["packages/magical-types/src/index.ts"],
       "@kbroom/nestjs-contextor": ["packages/nestjs-contextor/src/index.ts"],
       "@kbroom/nestjs-shield": ["packages/nestjs-shield/src/index.ts"],

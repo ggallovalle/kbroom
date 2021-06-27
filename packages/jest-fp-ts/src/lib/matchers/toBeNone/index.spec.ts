@@ -2,14 +2,6 @@ import { option } from "fp-tk";
 import matcher from "./";
 
 expect.extend(matcher);
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace jest {
-    interface Matchers<R> {
-      toBeNone(expected?: unknown): R;
-    }
-  }
-}
 
 const matcherName = ".toBeNone";
 describe(matcherName, () => {
