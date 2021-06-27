@@ -11,7 +11,7 @@ import {
   Show,
   size,
 } from "fp-ts/string";
-import { isEmptyToNone, isNanToNone, minusOneToNone } from "./Option";
+import { emptyStringToNone, NaNToNone, negativeToNone } from "./Option";
 
 /**
  * Calls `toString()` on object
@@ -25,14 +25,14 @@ export const toString = <T extends { toString: () => string }>(obj: T) =>
  * @param index The zero-based index of the desired character.
  */
 export const charAt = (index: number) => (str: string): Option<string> =>
-  pipe(str.charAt(index), flow(isEmptyToNone));
+  pipe(str.charAt(index), flow(emptyStringToNone));
 
 /**
  * Returns the Unicode value of the character at the specified location.
  * @param index The zero-based index of the desired character. If there is no character at the specified index, NaN is returned.
  */
 export const charCodeAt = (index: number) => (str: string): Option<number> =>
-  pipe(str.charCodeAt(index), isNanToNone);
+  pipe(str.charCodeAt(index), NaNToNone);
 
 /**
  * Returns a string that contains the concatenation of two or more strings.
@@ -48,7 +48,7 @@ export const concat = (str: string) => (str2: string): string =>
  */
 export const indexOf = (searchString: string, position?: number) => (
   str: string
-): Option<number> => pipe(str.indexOf(searchString, position), minusOneToNone);
+): Option<number> => pipe(str.indexOf(searchString, position), negativeToNone);
 
 /**
  * Returns the last occurrence of a substring in the string.
@@ -58,7 +58,7 @@ export const indexOf = (searchString: string, position?: number) => (
 export const lastIndexOf = (searchString: string, position?: number) => (
   str: string
 ): Option<number> =>
-  pipe(str.lastIndexOf(searchString, position), minusOneToNone);
+  pipe(str.lastIndexOf(searchString, position), negativeToNone);
 
 /**
  * Determines whether two strings are equivalent in the current or specified locale.
@@ -109,7 +109,7 @@ export const replace = (
  */
 export const search = (regexp: string | RegExp) => (
   str: string
-): Option<number> => pipe(str.search(regexp), minusOneToNone);
+): Option<number> => pipe(str.search(regexp), negativeToNone);
 
 /**
  * Returns a section of a string.
@@ -131,7 +131,7 @@ export const split = (separator: string | RegExp, limit?: number) => (
 
 export const subsstring = (start: number, end?: number) => (
   str: string
-): Option<string> => pipe(str.substring(start, end), isEmptyToNone);
+): Option<string> => pipe(str.substring(start, end), emptyStringToNone);
 
 export const toLowerCase = (str: string) => str.toLocaleLowerCase();
 
