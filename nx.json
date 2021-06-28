@@ -43,6 +43,9 @@
     "io-encrypted": {
       "tags": ["codec"]
     },
+    "jest-fp-ts": {
+      "tags": ["jest"]
+    },
     "magical-types": {
       "tags": ["types"]
     },

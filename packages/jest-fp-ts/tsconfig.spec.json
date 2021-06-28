@@ -3,18 +3,14 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": [
-      "jest",
-      "node",
-      "jest-extended",
-      "@kbroom/jest-fp-ts"
-    ]
+    "types": ["jest", "node", "jest-extended"]
   },
   "include": [
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "**/*.spec.js",
     "**/*.spec.jsx",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "src/index.ts"
   ]
 }

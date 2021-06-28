@@ -1,7 +1,7 @@
 module.exports = {
-  displayName: "fp-tk",
+  displayName: "jest-fp",
   preset: "../../jest.preset.js",
-  setupFilesAfterEnv: ["jest-extended", "@kbroom/jest-fp-ts"],
+  setupFilesAfterEnv: ["jest-extended"],
   globals: {
     "ts-jest": {
       tsconfig: "<rootDir>/tsconfig.spec.json",
@@ -12,5 +12,5 @@ module.exports = {
     "^.+\\.[tj]sx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  coverageDirectory: "../../coverage/packages/fp-tk",
+  coverageDirectory: "../../coverage/packages/jest-fp-ts",
 };

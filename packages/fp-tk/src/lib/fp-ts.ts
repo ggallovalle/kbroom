@@ -1,7 +1,6 @@
 // see guides https://marcel.is/fp-ts/
 // https://andywhite.xyz/posts/2021-01-28-rte-react/
 // fundamentals
-import * as option from "fp-ts/Option";
 import * as either from "fp-ts/Either";
 import * as these from "fp-ts/These";
 
@@ -23,11 +22,24 @@ import {
   flip,
   identity,
   constant,
+  constFalse,
+  constTrue,
+  constNull,
+  constUndefined,
+  constVoid,
+  not,
+  increment,
+  decrement,
+  absurd,
+  tupled,
+  untupled,
+  unsafeCoerce,
+  Endomorphism,
+  FunctionN,
   Lazy,
   Predicate,
   Refinement,
 } from "fp-ts/function";
-import * as str from "fp-ts/string";
 
 // data structures
 import * as array from "fp-ts/Array";
@@ -63,7 +75,6 @@ import * as stateReaderTE from "fp-ts/StateReaderTaskEither";
 import * as writer from "fp-ts/Writer";
 
 export {
-  option,
   either,
   these,
   task,
@@ -81,11 +92,24 @@ export {
   flip,
   identity,
   constant,
+  constFalse,
+  constTrue,
+  constNull,
+  constUndefined,
+  constVoid,
+  not,
+  increment,
+  decrement,
+  absurd,
+  tupled,
+  untupled,
+  unsafeCoerce,
+  Endomorphism,
+  FunctionN,
   Lazy,
   Predicate,
   Refinement,
   //#endregion
-  str,
   array,
   arrayR,
   arrayNE,
