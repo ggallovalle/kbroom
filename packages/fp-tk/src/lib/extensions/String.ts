@@ -1,5 +1,5 @@
 import { fold } from "fp-ts/boolean";
-import { constant, flow, pipe } from "fp-ts/function";
+import { flow, pipe } from "fp-ts/function";
 import { fromNullable, Option } from "fp-ts/Option";
 import {
   empty,
@@ -12,6 +12,11 @@ import {
   size,
 } from "fp-ts/string";
 import { emptyStringToNone, NaNToNone, negativeToNone } from "./Option";
+import {
+  PositiveInteger,
+  prismPositiveInteger,
+} from "newtype-ts/lib/PositiveInteger";
+import { option } from "fp-ts";
 
 /**
  * Calls `toString()` on object
@@ -93,13 +98,12 @@ export const replace = (
   pipe(
     typeof replaceValue === "string",
     fold(
-      constant(str.replace(searchValue, replaceValue as string)),
-      constant(
+      () => str.replace(searchValue, replaceValue as string),
+      () =>
         str.replace(
           searchValue,
           replaceValue as (subsString: string, ...args: unknown[]) => string
         )
-      )
     )
   );
 
@@ -117,7 +121,7 @@ export const search = (regexp: string | RegExp) => (
  * @param end The index to the end of the specified portion of stringObj. The substring includes the characters up to, but not including, the character indicated by end.
  * If this value is not specified, the substring continues to the end of stringObj.
  */
-export const slice = (start?: number, end?: number) => (str: string) =>
+export const slice = (start?: number, end?: number) => (str: string): string =>
   str.slice(start, end);
 
 /**
@@ -127,12 +131,77 @@ export const slice = (start?: number, end?: number) => (str: string) =>
  */
 export const split = (separator: string | RegExp, limit?: number) => (
   str: string
-) => str.split(separator, limit);
+): string[] => str.split(separator, limit);
 
+/**
+ * Returns the substring at the specified location within a String object.
+ * @param start The zero-based index number indicating the beginning of the substring.
+ * @param end Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end.
+ * If end is omitted, the characters from start through the end of the original string are returned.
+ */
 export const subsstring = (start: number, end?: number) => (
   str: string
 ): Option<string> => pipe(str.substring(start, end), emptyStringToNone);
 
-export const toLowerCase = (str: string) => str.toLocaleLowerCase();
+/** Converts all the alphabetic characters in a string to lowercase. */
+export const toLowerCase = (str: string): string => str.toLocaleLowerCase();
+
+/** Converts all the alphabetic characters in a string to uppercase. */
+export const toUpperCase = (str: string): string => str.toUpperCase();
+
+/** Removes the leading and trailing white space and line terminator characters from a string. */
+export const trim = (str: string): string => str.trim();
+
+/** Returns the length of a String object. */
+export const length = (str: string): number => str.length;
+
+/**
+ * Gets a substring beginning at the specified location and having the specified length.
+ * @param from The starting position of the desired substring. The index of the first character in the string is zero.
+ * @param length The number of characters to include in the returned substring.
+ */
+export const substr = (from: number, length?: number) => (
+  str: string
+): string => str.substr(from, length);
+
+/**
+ * Returns true if the sequence of elements of searchString converted to a String is the
+ * same as the corresponding elements of this object (converted to a String) starting at
+ * position. Otherwise returns false.
+ */
+export const startsWith = (searchString: string, position?: number) => (
+  str: string
+): boolean => str.startsWith(searchString, position);
+
+/**
+ * Returns true if searchString appears as a substring of the result of converting this
+ * object to a String, at one or more positions that are
+ * greater than or equal to position; otherwise, returns false.
+ * @param searchString search string
+ * @param position If position is undefined, 0 is assumed, so as to search all of the String.
+ */
+export const includes = (searchString: string, position?: number) => (
+  str: string
+): boolean => str.includes(searchString, position);
+
+/**
+ * Returns true if the sequence of elements of searchString converted to a String is the
+ * same as the corresponding elements of this object (converted to a String) starting at
+ * endPosition – length(this). Otherwise returns false.
+ */
+export const endsWith = (searchString: string, endPosition?: number) => (
+  str: string
+) => str.endsWith(searchString, endPosition);
+
+/**
+ * Returns a String value that is made from count copies appended together. If count is 0,
+ * the empty string is returned.
+ * @param count number of copies to append
+ */
+export const repeat = (count: number) => (str: string): Option<string> =>
+  pipe(
+    prismPositiveInteger.getOption(count),
+    option.map(() => str.repeat(count))
+  );
 
 export { empty, isEmpty, size, Eq, Monoid, Ord, Semigroup, Show };
