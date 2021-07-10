@@ -1,8 +1,8 @@
 {
   "name": "fp-tk",
-  "version": "2.2.0",
+  "version": "3.2.1",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
     "fp-ts": "^2.10.5",
     "io-ts": "^2.2.16",
     "monocle-ts": "^2.3.10",
