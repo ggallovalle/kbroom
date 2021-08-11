@@ -34,6 +34,7 @@
     "@nestjs/jwt": "^7.2.0",
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.0.0",
+    "@stamp/instanceof": "^1.0.1",
     "apollo-server-core": "^2.25.2",
     "apollo-server-errors": "^2.5.0",
     "bcrypt": "^5.0.1",
@@ -54,6 +55,7 @@
     "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.3",
+    "stampit": "^4.3.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
@@ -72,6 +74,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "26.0.8",
     "@types/node": "14.14.33",
+    "@types/stampit": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "4.19.0",
     "@typescript-eslint/parser": "4.19.0",
     "babel-plugin-macros": "^3.1.0",
